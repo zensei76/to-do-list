@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import pg from 'pg';
+import path from 'path';
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 // Load environment variables from .env file
@@ -19,7 +20,8 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 
 // PostgreSQL connection

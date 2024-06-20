@@ -20,6 +20,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+
+
 // PostgreSQL connection
 
 // const caCertPath = join(__dirname, 'ca.pem'); // Path to your CA certificate file
